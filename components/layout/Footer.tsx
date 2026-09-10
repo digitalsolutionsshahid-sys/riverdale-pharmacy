@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Clock, Mail, ShieldCheck } from 'lucide-react';
+import { MapPin, Phone, Clock, ExternalLink, ShieldCheck } from 'lucide-react';
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
 export function Footer() {
@@ -21,11 +21,11 @@ export function Footer() {
               </span>
             </div>
             <p className="text-sm text-stone-300 leading-relaxed">
-              Serving the families, seniors, and neighbors of Riverdale and the greater Bronx for over 35 years with personalized pharmaceutical care, consultations, and free local delivery.
+              Serving the Riverdale and Bronx community since 1987. Recently under new ownership with modernized automated phone services, text/email prescription updates, and dependable free neighborhood delivery.
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs text-pharmacy-amber">
-              <ShieldCheck className="w-4 h-4 text-pharmacy-amber" />
-              <span>Licensed NYS Board of Pharmacy</span>
+              <ShieldCheck className="w-4 h-4 text-pharmacy-amber shrink-0" />
+              <span>Licensed NYS Pharmacy • Medicare & Medicaid</span>
             </div>
           </div>
 
@@ -42,17 +42,17 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  Our Story & Pharmacists
+                  Our History & Care Team
                 </Link>
               </li>
               <li>
                 <Link href="/services" className="hover:text-white transition-colors">
-                  Prescription Services & Compounding
+                  Prescription Services & Free Delivery
                 </Link>
               </li>
               <li>
                 <Link href="/insurance-faq" className="hover:text-white transition-colors">
-                  Insurance Plans & Copay FAQ
+                  Insurance Plans & Transfers FAQ
                 </Link>
               </li>
               <li>
@@ -68,26 +68,26 @@ export function Footer() {
             <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber">
               Store & Pharmacy Hours
             </h3>
-            <div className="space-y-2 text-sm text-stone-300">
+            <div className="space-y-2.5 text-sm text-stone-300">
               <div className="flex items-start gap-2">
                 <Clock className="w-4 h-4 text-pharmacy-amber mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-white">Monday – Friday</p>
-                  <p className="text-xs text-stone-300">8:30 AM – 7:30 PM</p>
+                  <p className="text-xs text-stone-300">9:30 AM – 7:00 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 pt-1">
                 <div className="w-4 h-4 shrink-0" />
                 <div>
                   <p className="font-medium text-white">Saturday</p>
-                  <p className="text-xs text-stone-300">9:00 AM – 5:00 PM</p>
+                  <p className="text-xs text-stone-300">9:30 AM – 5:00 PM</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 pt-1">
                 <div className="w-4 h-4 shrink-0" />
                 <div>
                   <p className="font-medium text-white">Sunday</p>
-                  <p className="text-xs text-stone-300">10:00 AM – 3:00 PM</p>
+                  <p className="text-xs text-stone-300">Closed</p>
                 </div>
               </div>
             </div>
@@ -109,13 +109,20 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-pharmacy-amber shrink-0" />
-                <a href={`tel:${business.phone.replace(/[^0-9]/g, '')}`} className="hover:text-white font-medium">
-                  {business.phone}
+                <a href={`tel:${business.phone}`} className="hover:text-white font-medium">
+                  {business.phoneDisplay}
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-pharmacy-amber shrink-0" />
-                <span className="text-xs text-stone-300">care@riverdalepharmacy.com</span>
+              <div className="pt-2">
+                <a
+                  href={business.yelp.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-stone-300 hover:text-white transition-colors"
+                >
+                  <span>Yelp: {business.yelp.rating}★ ({business.yelp.reviewsCount} reviews)</span>
+                  <ExternalLink className="w-3 h-3 text-pharmacy-amber" />
+                </a>
               </div>
             </div>
           </div>
@@ -123,11 +130,13 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 mt-12 border-t border-emerald-900/60 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-stone-400">
-          <p>© {new Date().getFullYear()} Riverdale Pharmacy Inc. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <span>HIPAA Compliant Care</span>
+          <p>© {new Date().getFullYear()} Riverdale Pharmacy. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <span>5669 Riverdale Ave, Bronx NY 10471</span>
             <span>•</span>
-            <span>Bronx, New York</span>
+            <a href={`tel:${business.phone}`} className="hover:text-stone-200">
+              {business.phoneDisplay}
+            </a>
           </div>
         </div>
       </div>

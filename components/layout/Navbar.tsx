@@ -18,6 +18,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { business } = DESIGN_SYSTEM;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,12 +28,10 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Handle escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setMobileMenuOpen(false);
@@ -43,38 +42,38 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      {/* 1. Top Heritage & Utility Bar */}
+      {/* 1. Top Heritage & Operational Bar */}
       <div className="bg-pharmacy-forest text-pharmacy-surface text-xs font-sans tracking-wide py-2 px-4 sm:px-6 lg:px-8 border-b border-emerald-950/40">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-4 text-emerald-100/90 font-medium">
+          <div className="flex items-center gap-3 sm:gap-4 text-emerald-100/90 font-medium text-center sm:text-left">
             <span className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-pharmacy-amber animate-pulse" />
-              Serving the Riverdale Community Since 1987
+              Serving Riverdale & the Bronx Since 1987
             </span>
             <span className="hidden md:inline text-emerald-400/40">•</span>
             <span className="hidden md:inline-flex items-center gap-1 text-emerald-200/80">
               <MapPin className="w-3.5 h-3.5 text-pharmacy-amber" />
-              5645 Riverdale Ave, Bronx, NY
+              {business.address.street}, Bronx, NY
             </span>
           </div>
 
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline-flex items-center gap-1 text-emerald-200/80">
               <Clock className="w-3.5 h-3.5 text-pharmacy-amber" />
-              Open Today until 7:30 PM
+              Mon–Fri 9:30 AM – 7 PM
             </span>
             <a
-              href="tel:7185437000"
-              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-pharmacy-amber transition-colors"
+              href={`tel:${business.phone}`}
+              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-pharmacy-amber transition-colors min-h-[32px]"
             >
               <Phone className="w-3.5 h-3.5 text-pharmacy-amber" />
-              (718) 543-7000
+              {business.phoneDisplay}
             </a>
           </div>
         </div>
       </div>
 
-      {/* 2. Main Sticky Navigation Bar */}
+      {/* 2. Sticky Navigation Bar */}
       <nav
         className={`bg-pharmacy-surface/95 backdrop-blur-md transition-shadow duration-200 border-b border-pharmacy-border ${
           isScrolled ? 'shadow-warm-md' : 'shadow-warm'
@@ -92,7 +91,7 @@ export function Navbar() {
                 Riverdale Pharmacy
               </span>
               <span className="text-[0.68rem] tracking-[0.18em] font-sans uppercase text-pharmacy-amber font-semibold">
-                Neighborhood Apothecary • Est. 1987
+                Neighborhood Pharmacy • Trusted Since 1987
               </span>
             </Link>
 
@@ -122,7 +121,7 @@ export function Navbar() {
             {/* Header Right Action CTA */}
             <div className="hidden sm:flex items-center gap-3">
               <Link
-                href="/services#refill"
+                href="/services#refills"
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-button text-sm font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover active:scale-[0.98] transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:ring-offset-2 min-h-[44px]"
               >
                 <span>Refill / Transfer Rx</span>
@@ -167,18 +166,18 @@ export function Navbar() {
               })}
               <div className="pt-4 mt-2 border-t border-pharmacy-border flex flex-col gap-3">
                 <Link
-                  href="/services#refill"
+                  href="/services#refills"
                   className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   <span>Refill / Transfer Prescription</span>
                   <ArrowUpRight className="w-4 h-4 text-pharmacy-amber" />
                 </Link>
                 <a
-                  href="tel:7185437000"
+                  href={`tel:${business.phone}`}
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-button text-base font-medium border border-pharmacy-border text-pharmacy-ink hover:bg-pharmacy-surface-subtle transition-all min-h-[44px]"
                 >
                   <Phone className="w-4 h-4 text-pharmacy-amber" />
-                  Call (718) 543-7000
+                  Call {business.phoneDisplay}
                 </a>
               </div>
             </div>

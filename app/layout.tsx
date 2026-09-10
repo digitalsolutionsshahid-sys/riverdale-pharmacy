@@ -20,18 +20,18 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Riverdale Pharmacy | Neighborhood Healthcare Since 1987 (Bronx, NY)',
-    template: '%s | Riverdale Pharmacy (Bronx, NY)',
+    default: 'Riverdale Pharmacy | Neighborhood Pharmacy, Trusted Since 1987 (Bronx, NY)',
+    template: '%s | Riverdale Pharmacy',
   },
   description:
-    'Riverdale Pharmacy has served Bronx families and seniors since 1987. Personalized prescriptions, immunizations, compounding, and free neighborhood delivery.',
+    'Riverdale Pharmacy has served Bronx neighbors since 1987. Personalized care, reliable medication stock, walk-in vaccines, and free neighborhood delivery. Located at 5669 Riverdale Ave.',
   keywords: [
     'Riverdale Pharmacy',
-    'Bronx pharmacy',
-    'Riverdale Ave pharmacy',
-    'prescription refill Bronx',
-    'local compounding pharmacy',
-    'vaccines and flu shots Bronx',
+    'Bronx pharmacy 10471',
+    '5669 Riverdale Ave',
+    'free prescription delivery Bronx',
+    'walk-in vaccines Bronx',
+    'prescription transfers Bronx',
   ],
   authors: [{ name: 'Riverdale Pharmacy' }],
   creator: 'Riverdale Pharmacy',
