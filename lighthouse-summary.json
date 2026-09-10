@@ -2,7 +2,7 @@
   {
     "name": "Home",
     "path": "/",
-    "performance": 93,
+    "performance": 92,
     "accessibility": 100,
     "bestPractices": 96,
     "seo": 100
@@ -10,7 +10,7 @@
   {
     "name": "About",
     "path": "/about",
-    "performance": 98,
+    "performance": 97,
     "accessibility": 100,
     "bestPractices": 96,
     "seo": 100
@@ -18,7 +18,7 @@
   {
     "name": "Services",
     "path": "/services",
-    "performance": 97,
+    "performance": 98,
     "accessibility": 100,
     "bestPractices": 96,
     "seo": 100
@@ -34,7 +34,7 @@
   {
     "name": "Contact",
     "path": "/contact",
-    "performance": 96,
+    "performance": 98,
     "accessibility": 100,
     "bestPractices": 96,
     "seo": 100
