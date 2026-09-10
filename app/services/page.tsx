@@ -202,8 +202,8 @@ export default function ServicesPage() {
 
         {/* Services Grid (Full 10 Services) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {SERVICES.map((service) => {
-            const Icon = service.icon;
+          {SERVICES.map((service, index) => {
+            const indexStr = (index + 1).toString().padStart(2, '0');
             return (
               <div
                 key={service.id}
@@ -211,11 +211,11 @@ export default function ServicesPage() {
                 className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between scroll-mt-28"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center">
-                      <Icon className="w-6 h-6 text-pharmacy-forest" />
-                    </div>
-                    <span className="text-[0.7rem] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-pharmacy-surface-subtle text-pharmacy-ink-muted border border-pharmacy-border">
+                  <div className="flex items-baseline justify-between mb-5 pb-3 border-b border-pharmacy-border/60">
+                    <span className="font-serif text-3xl font-bold text-pharmacy-amber tracking-tight">
+                      {indexStr}
+                    </span>
+                    <span className="text-[0.68rem] tracking-[0.14em] uppercase font-semibold px-2.5 py-1 rounded-full bg-pharmacy-surface-subtle text-pharmacy-forest border border-pharmacy-border">
                       {service.tag}
                     </span>
                   </div>

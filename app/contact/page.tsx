@@ -237,8 +237,8 @@ export default function ContactPage() {
 
             <div className="rounded-card overflow-hidden border border-pharmacy-border bg-pharmacy-surface shadow-warm-md h-[400px] relative">
               <iframe
-                title="Google Map showing Riverdale Pharmacy location at 5669 Riverdale Ave, Bronx NY 10471"
-                src="https://maps.google.com/maps?q=5669+Riverdale+Ave,+Bronx,+NY+10471&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Google Maps official location pin for Riverdale Pharmacy at 5669 Riverdale Ave, Bronx, NY 10471"
+                src="https://maps.google.com/maps?q=Riverdale+Pharmacy,+5669+Riverdale+Ave,+Bronx,+NY+10471&t=&z=16&ie=UTF8&iwloc=B&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

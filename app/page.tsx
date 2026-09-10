@@ -204,8 +204,13 @@ export default function HomePage() {
             {/* Card 1 */}
             <div className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface flex flex-col justify-between shadow-warm">
               <div>
-                <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center mb-6">
-                  <PackageCheck className="w-6 h-6 text-pharmacy-forest" />
+                <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-pharmacy-border/60">
+                  <span className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-amber tracking-tight">
+                    01
+                  </span>
+                  <span className="text-[0.68rem] tracking-[0.16em] uppercase font-semibold text-pharmacy-forest bg-pharmacy-forest-light px-2.5 py-1 rounded-full border border-emerald-900/10">
+                    Stock Assurance
+                  </span>
                 </div>
                 <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Reliable Medication Stock
@@ -222,8 +227,13 @@ export default function HomePage() {
             {/* Card 2 */}
             <div className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface flex flex-col justify-between shadow-warm">
               <div>
-                <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center mb-6">
-                  <HeartHandshake className="w-6 h-6 text-pharmacy-forest" />
+                <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-pharmacy-border/60">
+                  <span className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-amber tracking-tight">
+                    02
+                  </span>
+                  <span className="text-[0.68rem] tracking-[0.16em] uppercase font-semibold text-pharmacy-forest bg-pharmacy-forest-light px-2.5 py-1 rounded-full border border-emerald-900/10">
+                    Direct Care
+                  </span>
                 </div>
                 <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Friendly, Knowledgeable Staff
@@ -240,8 +250,13 @@ export default function HomePage() {
             {/* Card 3 */}
             <div className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface flex flex-col justify-between shadow-warm">
               <div>
-                <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center mb-6">
-                  <Truck className="w-6 h-6 text-pharmacy-forest" />
+                <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-pharmacy-border/60">
+                  <span className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-amber tracking-tight">
+                    03
+                  </span>
+                  <span className="text-[0.68rem] tracking-[0.16em] uppercase font-semibold text-pharmacy-forest bg-pharmacy-forest-light px-2.5 py-1 rounded-full border border-emerald-900/10">
+                    Local Transit
+                  </span>
                 </div>
                 <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Free Local Delivery
@@ -258,8 +273,13 @@ export default function HomePage() {
             {/* Card 4 */}
             <div className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface flex flex-col justify-between shadow-warm">
               <div>
-                <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center mb-6">
-                  <Syringe className="w-6 h-6 text-pharmacy-forest" />
+                <div className="flex items-baseline justify-between mb-6 pb-4 border-b border-pharmacy-border/60">
+                  <span className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-amber tracking-tight">
+                    04
+                  </span>
+                  <span className="text-[0.68rem] tracking-[0.16em] uppercase font-semibold text-pharmacy-forest bg-pharmacy-forest-light px-2.5 py-1 rounded-full border border-emerald-900/10">
+                    Walk-In Clinical
+                  </span>
                 </div>
                 <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Walk-In Adult Vaccines
