@@ -1,0 +1,66 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './lib/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        pharmacy: {
+          bg: '#FBF9F5', // Warm linen ground
+          surface: '#FFFFFF', // Crisp card surface
+          'surface-subtle': '#F4F0E8', // Muted cream background
+          border: '#E8E3DA', // Soft warm border
+          'border-strong': '#D3CBC0', // Defined border
+          forest: {
+            DEFAULT: '#1B3B2B', // Deep heritage botanical green
+            hover: '#132B20',
+            light: '#EBF2EE', // Soft green badge background
+          },
+          amber: {
+            DEFAULT: '#C28E47', // Warm apothecary amber
+            hover: '#AA7938',
+            light: '#FAF3E8', // Soft amber badge background
+          },
+          ink: {
+            DEFAULT: '#1D201E', // Warm charcoal body text
+            muted: '#5A635E', // Secondary muted text
+            subtle: '#818B85', // Captions & metadata
+          },
+        },
+      },
+      fontFamily: {
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['3.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-md': ['2.75rem', { lineHeight: '1.15', letterSpacing: '-0.02em', fontWeight: '700' }],
+        'display-sm': ['2.25rem', { lineHeight: '1.2', letterSpacing: '-0.015em', fontWeight: '600' }],
+        'heading-lg': ['1.75rem', { lineHeight: '1.25', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-md': ['1.375rem', { lineHeight: '1.3', letterSpacing: '-0.01em', fontWeight: '600' }],
+        'heading-sm': ['1.125rem', { lineHeight: '1.4', fontWeight: '600' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.65' }],
+        'body-base': ['1rem', { lineHeight: '1.6' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }],
+        caption: ['0.75rem', { lineHeight: '1.4', letterSpacing: '0.04em' }],
+      },
+      boxShadow: {
+        warm: '0 2px 10px -2px rgba(27, 32, 29, 0.05)',
+        'warm-md': '0 4px 20px -4px rgba(27, 32, 29, 0.08)',
+        'warm-lg': '0 12px 32px -6px rgba(27, 32, 29, 0.1)',
+      },
+      borderRadius: {
+        card: '12px',
+        button: '8px',
+      },
+    },
+  },
+  plugins: [],
+};
+
+export default config;
