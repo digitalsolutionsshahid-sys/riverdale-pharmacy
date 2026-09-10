@@ -79,6 +79,10 @@ export default function InsuranceFaqPage() {
       category: 'Fulfillment & Daily Timelines',
       questions: [
         {
+          q: 'When is the busiest time at the pharmacy counter, and how can I avoid waiting?',
+          a: 'Peak in-store rush is 4:30–6:30 PM as commuters return home. Call ahead or use our automated refill line and your prescription will be ready at the register when you arrive. You can also request free home delivery.',
+        },
+        {
           q: 'How long does it take to fill a regular refill?',
           a: 'Routine refills of in-stock medications are typically filled in 15 to 20 minutes. If you call ahead or request a refill through our 24/7 automated phone system, your prescription will be ready waiting for you, and you will receive an automatic text or email confirmation.',
         },

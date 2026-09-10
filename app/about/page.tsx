@@ -11,13 +11,14 @@ import {
   BellRing,
   ShieldCheck,
   CheckCircle2,
+  UserCheck,
 } from 'lucide-react';
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
 export const metadata: Metadata = {
   title: 'Our History & Community Care Since 1987 | Riverdale Pharmacy',
   description:
-    'Learn about Riverdale Pharmacy’s 35-year commitment to independent Bronx healthcare, our approachable pharmacists, and modernized prescription update services.',
+    'Learn about Riverdale Pharmacy’s 39-year commitment to independent Bronx healthcare, our approachable pharmacists, and modernized prescription update services.',
   alternates: {
     canonical: '/about',
   },
@@ -171,6 +172,45 @@ export default function AboutPage() {
               <p className="mt-2 text-sm text-pharmacy-ink-muted leading-relaxed">
                 Expanded inventory network to ensure essential medications are reliably on hand when larger corporate chains face regional shortages.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Clinical Leadership & Supervising Pharmacist */}
+        <section className="mb-20 p-8 sm:p-12 rounded-card bg-pharmacy-surface border border-pharmacy-border shadow-warm" aria-labelledby="leadership-heading">
+          <div className="max-w-3xl">
+            <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
+              Pharmacy Leadership & Care Standards
+            </span>
+            <h2 id="leadership-heading" className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-forest">
+              Clinical Oversight & Supervising Pharmacist
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-pharmacy-ink-muted leading-relaxed font-sans">
+              Independent community pharmacy is rooted in accountability. Under our current ownership and clinical management, a licensed Supervising Pharmacist (RPh) is on site and actively overseeing patient safety, pediatric and geriatric dosing, and physician coordination throughout every operating hour.
+            </p>
+            <div className="mt-8 p-6 rounded-card bg-pharmacy-surface-subtle border border-pharmacy-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-pharmacy-forest text-white flex items-center justify-center shrink-0">
+                  <UserCheck className="w-7 h-7 text-pharmacy-amber-accent" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
+                    Supervising Pharmacist & Pharmacy Manager
+                  </h3>
+                  <p className="text-xs text-pharmacy-amber font-semibold uppercase tracking-wider mt-0.5">
+                    New York State Registered Pharmacist (RPh)
+                  </p>
+                  <p className="text-xs text-pharmacy-ink-muted mt-1">
+                    Specialized in Medication Therapy Management, Immunizations & Chronic Disease Support
+                  </p>
+                </div>
+              </div>
+              <div className="shrink-0 text-xs text-pharmacy-ink-muted border-t sm:border-t-0 sm:border-l sm:border-pharmacy-border pt-3 sm:pt-0 sm:pl-6 space-y-1">
+                <p className="font-semibold text-pharmacy-forest">Direct Consultations:</p>
+                <p>Mon–Fri: 9:30 AM – 7:00 PM</p>
+                <p>Saturday: 9:30 AM – 5:00 PM</p>
+                <p className="text-emerald-800 font-medium">Walk-ins always welcome</p>
+              </div>
             </div>
           </div>
         </section>

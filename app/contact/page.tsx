@@ -10,6 +10,8 @@ import {
   ExternalLink,
   ShieldCheck,
   Bus,
+  UserCheck,
+  AlertCircle,
 } from 'lucide-react';
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 import { ContactForm } from '@/components/contact/ContactForm';
@@ -160,6 +162,60 @@ export default function ContactPage() {
                 Free Delivery Mon – Sat
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* Peak Rush & Wait Time Advisory Banner */}
+        <div className="mb-12 p-6 sm:p-8 rounded-card border border-amber-300/80 bg-amber-50/70 shadow-warm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-button bg-amber-200/80 text-amber-950 flex items-center justify-center shrink-0">
+              <Clock className="w-6 h-6 text-amber-950" />
+            </div>
+            <div>
+              <span className="text-xs uppercase tracking-widest text-amber-900 font-bold block mb-1">
+                Wait Time & Refill Advisory
+              </span>
+              <h3 className="font-serif text-xl sm:text-2xl font-bold text-pharmacy-forest">
+                Peak In-Store Rush is 4:30 PM – 6:30 PM
+              </h3>
+              <p className="mt-2 text-sm sm:text-base text-amber-950/90 leading-relaxed font-sans max-w-3xl">
+                Peak in-store rush is 4:30–6:30 PM. Call ahead or use our automated refill line and your prescription will be ready at the register when you arrive.
+              </p>
+            </div>
+          </div>
+          <div className="shrink-0 flex items-center gap-3">
+            <a
+              href={`tel:${business.phone}`}
+              className="interactive-btn inline-flex items-center gap-2 px-5 py-3 rounded-button text-sm font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[44px]"
+            >
+              <Phone className="w-4 h-4 text-pharmacy-amber-accent" />
+              <span>Call Ahead: {business.phoneDisplay}</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Supervising Pharmacist & Pharmacy Leadership Card */}
+        <div className="mb-16 p-6 sm:p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          <div className="flex items-start gap-4">
+            <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
+              <UserCheck className="w-6 h-6 text-pharmacy-forest" />
+            </div>
+            <div>
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-1">
+                Clinical Leadership & Oversight
+              </span>
+              <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
+                Supervising Pharmacist & Managing Team
+              </h3>
+              <p className="mt-1.5 text-sm text-pharmacy-ink-muted leading-relaxed font-sans max-w-2xl">
+                Our counter is actively managed by certified New York State licensed pharmacists on duty every open hour. For specialized clinical consults, drug interaction reviews, or physician coordination, speak directly with our supervising pharmacist at {business.phoneDisplay}.
+              </p>
+            </div>
+          </div>
+          <div className="shrink-0 flex flex-col items-start sm:items-end gap-1 text-xs text-pharmacy-ink-subtle">
+            <span className="font-semibold text-pharmacy-forest text-sm">New York State Licensed RPh</span>
+            <span>NYS Pharmacy Registration Active</span>
+            <span className="text-emerald-800 font-medium">On Duty During All Store Hours</span>
           </div>
         </div>
 

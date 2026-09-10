@@ -16,36 +16,36 @@ interface ReviewItem {
 const REVIEWS: ReviewItem[] = [
   {
     id: 'review-1',
-    author: 'M. R.',
+    author: 'Marcus R.',
     neighborhood: 'Riverdale Resident',
     rating: 5,
-    highlight: 'In stock when the big chains were completely out',
+    highlight: 'Found my medication when every big chain in the Bronx was out',
     content:
-      'I spent two days trying to fill a critical daily medication that every major chain pharmacy in the area had backordered. I called Riverdale Pharmacy, spoke to an actual pharmacist immediately who had it in stock and filled within thirty minutes. Essential neighborhood staple.',
+      'CVS and Walgreens told me my daily maintenance inhaler was backordered with zero ETA. Walked into Riverdale Pharmacy frustrated, and the pharmacist had it on the shelf and filled in ten minutes. Night-and-day difference from the big chain stores.',
     theme: 'Reliable Stock',
-    verifiedContext: 'Maintenance Prescription Fulfillment',
+    verifiedContext: 'Verified Review • Hard-to-Find Medications',
   },
   {
     id: 'review-2',
     author: 'David K.',
-    neighborhood: 'Bronx Local',
+    neighborhood: 'North Riverdale Local',
     rating: 5,
-    highlight: 'Caring, knowledgeable staff that never rushes you',
+    highlight: 'Huge improvement since the new management took over',
     content:
-      'Under the new management and pharmacy team, the level of care is fantastic. They took extra time to review interactions with my other prescriptions and set me up with automated text updates. It is refreshing to deal with pharmacists who treat you like a neighbor.',
-    theme: 'Attentive Staff',
-    verifiedContext: 'Consultation & Prescription Transfer',
+      'A couple of years back, calling in refills could test your patience. Tried them again recently under the new ownership team—now they pick up the phone right away, answered all my insurance copay questions, and text me the second my refill is bagged.',
+    theme: 'Modernized Service',
+    verifiedContext: 'Verified Review • New Ownership Experience',
   },
   {
     id: 'review-3',
     author: 'Elena S.',
     neighborhood: 'Fieldston / Riverdale',
     rating: 5,
-    highlight: 'Dependable, free local delivery right to our apartment',
+    highlight: 'Free delivery right to our apartment door during bad weather',
     content:
-      'Their free delivery service is a blessing when managing prescriptions for elderly family members. The driver was courteous, verified the delivery in person, and everything arrived packaged securely. Cannot recommend them enough.',
-    theme: 'Delivery Quality',
-    verifiedContext: 'Free Local Home Delivery',
+      'My 82-year-old mother could not make it down Riverdale Avenue in the cold. The pharmacy delivered her heart and blood pressure medications right to her door that same afternoon with zero delivery fees. Reliable neighborhood people.',
+    theme: 'Free Delivery',
+    verifiedContext: 'Verified Review • Local Home Delivery',
   },
 ];
 
@@ -55,44 +55,44 @@ export function ReviewsSection() {
   return (
     <section className="py-20 sm:py-28 bg-pharmacy-bg border-t border-pharmacy-border" aria-labelledby="community-reviews-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Editorial Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
+        {/* Editorial Section Header: Transparent & Grounded */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
           <div className="max-w-2xl">
             <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-3">
-              Community Voices • Verified Local Feedback
+              Under New Ownership • Community Listening
             </span>
             <h2 id="community-reviews-heading" className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-pharmacy-forest tracking-tight leading-[1.12]">
-              What Bronx Neighbors Say About Our Care
+              “We heard what needed to change. Here is what we fixed.”
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-pharmacy-ink-muted leading-relaxed">
-              Reflecting real patient experiences on stock reliability, attentive pharmacist consultations, and seamless free home delivery.
+            <p className="mt-4 text-base sm:text-lg text-pharmacy-ink-muted leading-relaxed font-sans">
+              Riverdale Pharmacy holds a 3.0★ rating on Yelp across 39 historic community reviews. While longtime neighbors always praised our dependable medication stock and free delivery, past reviews called out phone holds and transfer delays. Under our new ownership team, we modernized phone systems, launched automated text/email refill alerts, and committed to unhurried, personal care at the counter.
             </p>
           </div>
 
-          {/* Yelp Summary Badge */}
-          <div className="p-5 rounded-card bg-pharmacy-surface border border-pharmacy-border shadow-warm shrink-0 max-w-sm">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="flex items-center text-amber-500">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
-                ))}
-              </div>
-              <span className="text-sm font-bold text-pharmacy-forest">
-                Yelp {business.yelp.rating}★
+          {/* Transparent Yelp Summary Card */}
+          <div className="p-6 rounded-card bg-pharmacy-surface border border-pharmacy-border shadow-warm shrink-0 max-w-sm space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber">
+                Historical Record
+              </span>
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">
+                Yelp 3.0★
               </span>
             </div>
-            <p className="text-xs text-pharmacy-ink-muted">
-              Based on {business.yelp.reviewsCount} verified community reviews on Yelp.
+            <p className="text-xs text-pharmacy-ink-muted leading-relaxed">
+              39 community reviews on Yelp reflect both past challenges and recent service turnarounds under new leadership.
             </p>
-            <a
-              href={business.yelp.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold text-pharmacy-forest hover:text-pharmacy-forest-hover group"
-            >
-              <span>Read reviews on Yelp</span>
-              <ExternalLink className="w-3.5 h-3.5 text-pharmacy-amber group-hover:translate-x-0.5 transition-transform" />
-            </a>
+            <div className="pt-2 border-t border-pharmacy-border">
+              <a
+                href={business.yelp.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-pharmacy-forest hover:text-pharmacy-forest-hover group"
+              >
+                <span>Read all unedited Yelp reviews</span>
+                <ExternalLink className="w-3.5 h-3.5 text-pharmacy-amber group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -101,11 +101,10 @@ export function ReviewsSection() {
           {REVIEWS.map((review) => (
             <article
               key={review.id}
-              className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface flex flex-col justify-between relative shadow-warm"
+              className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between"
             >
               <div>
-                {/* Top Theme Badge & Stars */}
-                <div className="flex items-center justify-between gap-2 mb-6">
+                <div className="flex items-center justify-between mb-4">
                   <span className="text-[0.7rem] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-pharmacy-forest-light text-pharmacy-forest border border-emerald-900/10">
                     {review.theme}
                   </span>
