@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -7,10 +8,7 @@ import {
   HelpCircle,
   Clock,
   Phone,
-  ArrowRight,
   FileCheck2,
-  Mail,
-  AlertCircle,
 } from 'lucide-react';
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
@@ -83,23 +81,23 @@ export default function InsuranceFaqPage() {
   ];
 
   return (
-    <div className="w-full flex-1 py-16 sm:py-20 bg-pharmacy-bg">
+    <div className="w-full flex-1 py-16 sm:py-24 bg-pharmacy-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted hover:text-pharmacy-forest transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted hover:text-pharmacy-forest transition-colors mb-10"
         >
           <ArrowLeft className="w-4 h-4 text-pharmacy-amber" />
           <span>Back to Home</span>
         </Link>
 
         {/* Page Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
+        <div className="max-w-3xl mb-16 sm:mb-20">
+          <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-3">
             Clear Insurance & Prescription Answers
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-pharmacy-forest tracking-tight leading-[1.15]">
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-[4rem] font-bold text-pharmacy-forest tracking-tight leading-[1.08]">
             Insurance Coverage & Transfers FAQ
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-pharmacy-ink-muted leading-relaxed font-sans">
@@ -107,15 +105,15 @@ export default function InsuranceFaqPage() {
           </p>
         </div>
 
-        {/* Insurance Overview Card */}
-        <div className="p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm mb-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            <div className="flex items-start gap-3.5">
-              <div className="w-10 h-10 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0 mt-1">
-                <ShieldCheck className="w-5 h-5 text-pharmacy-forest" />
+        {/* Insurance Overview Banner */}
+        <div className="p-8 sm:p-10 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-6 h-6 text-pharmacy-forest" />
               </div>
               <div>
-                <h2 className="font-serif text-lg font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Medicare & Medicaid
                 </h2>
                 <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
@@ -124,12 +122,12 @@ export default function InsuranceFaqPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3.5 md:border-l md:border-pharmacy-border md:pl-6">
-              <div className="w-10 h-10 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0 mt-1">
-                <FileCheck2 className="w-5 h-5 text-pharmacy-forest" />
+            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border md:pl-8">
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-6 h-6 text-pharmacy-forest" />
               </div>
               <div>
-                <h2 className="font-serif text-lg font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Major Commercial Plans
                 </h2>
                 <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
@@ -138,12 +136,12 @@ export default function InsuranceFaqPage() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3.5 md:border-l md:border-pharmacy-border md:pl-6">
-              <div className="w-10 h-10 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0 mt-1">
-                <Clock className="w-5 h-5 text-pharmacy-forest" />
+            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border md:pl-8">
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
+                <Clock className="w-6 h-6 text-pharmacy-forest" />
               </div>
               <div>
-                <h2 className="font-serif text-lg font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
                   Text / Email Alerts
                 </h2>
                 <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
@@ -154,15 +152,15 @@ export default function InsuranceFaqPage() {
           </div>
         </div>
 
-        {/* FAQ Accordion-like Sections */}
-        <div className="space-y-12 mb-16">
+        {/* FAQ Sections */}
+        <div className="space-y-16 mb-20">
           {FAQ_SECTIONS.map((section) => (
-            <div key={section.category} className="space-y-6">
-              <div className="border-b border-pharmacy-border pb-3">
+            <div key={section.category} className="space-y-8">
+              <div className="border-b border-pharmacy-border pb-4">
                 <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold">
                   Category
                 </span>
-                <h2 className="font-serif text-2xl font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-pharmacy-forest">
                   {section.category}
                 </h2>
               </div>
@@ -171,15 +169,15 @@ export default function InsuranceFaqPage() {
                 {section.questions.map((faq, idx) => (
                   <div
                     key={idx}
-                    className="p-6 sm:p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm"
+                    className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm"
                   >
-                    <div className="flex items-start gap-3">
-                      <HelpCircle className="w-5 h-5 text-pharmacy-amber shrink-0 mt-1" />
+                    <div className="flex items-start gap-4">
+                      <HelpCircle className="w-6 h-6 text-pharmacy-amber shrink-0 mt-1" />
                       <div className="space-y-3">
-                        <h3 className="font-serif text-lg sm:text-xl font-bold text-pharmacy-forest">
+                        <h3 className="font-serif text-xl font-bold text-pharmacy-forest leading-snug">
                           {faq.q}
                         </h3>
-                        <p className="text-sm sm:text-base text-pharmacy-ink-muted leading-relaxed font-sans">
+                        <p className="text-base text-pharmacy-ink-muted leading-relaxed font-sans">
                           {faq.a}
                         </p>
                       </div>
@@ -191,31 +189,40 @@ export default function InsuranceFaqPage() {
           ))}
         </div>
 
-        {/* Accessible Image Placeholder */}
-        <div
-          className="p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface-subtle mb-16"
-          role="img"
-          aria-label="Illustration depicting pharmacist verifying patient insurance coverage and prescription details at Riverdale Pharmacy counter in Bronx, NY"
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="space-y-2">
+        {/* Real Site Photo & Callout Card */}
+        <div className="rounded-card border border-pharmacy-border bg-pharmacy-surface-subtle overflow-hidden shadow-warm-md">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
+            <div className="lg:col-span-8 space-y-3">
               <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block">
-                Insurance Check Assistance
+                Direct Insurance Verification
               </span>
-              <h2 className="font-serif text-2xl font-bold text-pharmacy-forest">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-forest">
                 Still have questions about your specific plan?
               </h2>
-              <p className="text-sm text-pharmacy-ink-muted leading-relaxed">
-                Call our pharmacy team at {business.phoneDisplay} or bring your insurance card to 5669 Riverdale Ave. We are glad to check copays and formulary tiers for you.
+              <p className="text-sm sm:text-base text-pharmacy-ink-muted leading-relaxed max-w-xl">
+                Call our pharmacy team at {business.phoneDisplay} or bring your insurance card to 5669 Riverdale Ave. We are glad to check copays and formulary tiers for you on the spot.
               </p>
+              <div className="pt-2">
+                <a
+                  href={`tel:${business.phone}`}
+                  className="interactive-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[48px]"
+                >
+                  <Phone className="w-4 h-4 text-pharmacy-amber" />
+                  <span>Call {business.phoneDisplay}</span>
+                </a>
+              </div>
             </div>
-            <a
-              href={`tel:${business.phone}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-button text-sm font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm shrink-0 min-h-[44px]"
-            >
-              <Phone className="w-4 h-4 text-pharmacy-amber" />
-              <span>Call {business.phoneDisplay}</span>
-            </a>
+            <div className="lg:col-span-4 flex justify-center lg:justify-end">
+              <div className="relative rounded-card overflow-hidden border border-pharmacy-border w-full max-w-xs aspect-square shadow-warm">
+                <Image
+                  src="/images/riverdale-rx-care.png"
+                  alt="Pharmacist checking insurance prescription formulary details at Riverdale Pharmacy counter in Bronx, NY"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 30vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

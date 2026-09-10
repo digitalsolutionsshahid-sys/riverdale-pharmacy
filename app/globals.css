@@ -7,7 +7,9 @@
   --color-surface: #FFFFFF;
   --color-surface-subtle: #F4F0E8;
   --color-forest: #1B3B2B;
+  --color-forest-hover: #132B20;
   --color-amber: #C28E47;
+  --color-amber-hover: #AA7938;
   --color-ink: #1D201E;
   --color-ink-muted: #5A635E;
   --color-border: #E8E3DA;
@@ -26,6 +28,7 @@
   body {
     background-color: var(--color-bg);
     min-height: 100vh;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -37,5 +40,28 @@
   :focus-visible {
     outline: 2px solid var(--color-forest);
     outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Subtle micro-interactions */
+  .interactive-card {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .interactive-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(27, 32, 29, 0.08), 0 8px 10px -6px rgba(27, 32, 29, 0.04);
+    border-color: rgba(27, 59, 43, 0.35);
+  }
+
+  .interactive-btn {
+    transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+                background-color 0.15s ease,
+                box-shadow 0.15s ease;
+  }
+  .interactive-btn:active {
+    transform: scale(0.98);
   }
 }

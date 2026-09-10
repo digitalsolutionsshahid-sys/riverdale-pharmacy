@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -119,24 +120,24 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="w-full flex-1 py-16 sm:py-20 bg-pharmacy-bg">
+    <div className="w-full flex-1 py-16 sm:py-24 bg-pharmacy-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted hover:text-pharmacy-forest transition-colors mb-8"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted hover:text-pharmacy-forest transition-colors mb-10"
         >
           <ArrowLeft className="w-4 h-4 text-pharmacy-amber" />
           <span>Back to Home</span>
         </Link>
 
         {/* Page Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
+        <div className="max-w-3xl mb-16 sm:mb-20">
+          <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-3">
             Complete Pharmacy Services
           </span>
-          <h1 className="font-serif text-4xl sm:text-5xl font-bold text-pharmacy-forest tracking-tight leading-[1.15]">
-            Clinical Excellence & Everyday Convenience
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-[4rem] font-bold text-pharmacy-forest tracking-tight leading-[1.08]">
+            Clinical Care & Everyday Convenience
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-pharmacy-ink-muted leading-relaxed font-sans">
             From critical medication dispensing and walk-in vaccines to official DMV eye exams and notary services, Riverdale Pharmacy is your complete neighborhood healthcare hub.
@@ -144,19 +145,19 @@ export default function ServicesPage() {
         </div>
 
         {/* Transfer / Refill Action Callout */}
-        <div id="refills" className="p-8 rounded-card bg-pharmacy-surface border border-pharmacy-border shadow-warm mb-16">
+        <div id="refills" className="p-8 sm:p-12 rounded-card bg-pharmacy-surface border border-pharmacy-border shadow-warm-md mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8">
-              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-1">
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
                 Prescription Refill & Transfer Guide
               </span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-pharmacy-forest">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-pharmacy-forest leading-snug">
                 Ready to refill or transfer your prescriptions?
               </h2>
-              <p className="text-sm sm:text-base text-pharmacy-ink-muted mt-2 leading-relaxed">
+              <p className="text-base text-pharmacy-ink-muted mt-3 leading-relaxed">
                 You can call us directly at <span className="font-semibold text-pharmacy-forest">{business.phoneDisplay}</span> with your Rx numbers, use our 24/7 automated phone line, or bring in your existing bottles. We handle the rest.
               </p>
-              <div className="mt-4 flex flex-wrap gap-4 text-xs font-medium text-pharmacy-forest">
+              <div className="mt-6 flex flex-wrap gap-4 text-xs font-medium text-pharmacy-forest">
                 <span className="inline-flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-700" />
                   We contact your doctor or previous pharmacy
@@ -174,14 +175,14 @@ export default function ServicesPage() {
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
               <a
                 href={`tel:${business.phone}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[44px]"
+                className="interactive-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[48px]"
               >
                 <Phone className="w-4 h-4 text-pharmacy-amber" />
                 <span>Call {business.phoneDisplay}</span>
               </a>
               <Link
                 href="/insurance-faq"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button text-sm font-medium border border-pharmacy-border text-pharmacy-ink hover:bg-pharmacy-surface-subtle transition-colors min-h-[44px]"
+                className="interactive-btn inline-flex items-center justify-center gap-2 px-7 py-4 rounded-button text-sm font-semibold border border-pharmacy-border text-pharmacy-ink hover:bg-pharmacy-surface-subtle transition-colors min-h-[48px]"
               >
                 <span>View Insurance Details</span>
               </Link>
@@ -190,26 +191,26 @@ export default function ServicesPage() {
         </div>
 
         {/* Services Grid (Full 10 Services) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {SERVICES.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
                 id={service.id}
-                className="p-6 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between"
+                className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-11 h-11 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-pharmacy-forest" />
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-pharmacy-forest" />
                     </div>
                     <span className="text-[0.7rem] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-pharmacy-surface-subtle text-pharmacy-ink-muted border border-pharmacy-border">
                       {service.tag}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl font-bold text-pharmacy-forest">
+                  <h3 className="font-serif text-xl font-bold text-pharmacy-forest leading-snug">
                     {service.title}
                   </h3>
 
@@ -218,7 +219,7 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-pharmacy-border flex items-center justify-between text-xs text-pharmacy-ink-subtle">
+                <div className="mt-8 pt-4 border-t border-pharmacy-border flex items-center justify-between text-xs text-pharmacy-ink-subtle">
                   <span>Available on-site</span>
                   <span className="font-medium text-pharmacy-forest">5669 Riverdale Ave</span>
                 </div>
@@ -227,22 +228,31 @@ export default function ServicesPage() {
           })}
         </div>
 
-        {/* Informational Graphic & Support Card */}
-        <div
-          className="p-8 rounded-card border border-pharmacy-border bg-pharmacy-forest text-white"
-          role="img"
-          aria-label="Illustration depicting Riverdale Pharmacy clinical service counter in Bronx, NY, highlighting on-site immunization administration, prescription consultations, and customer care"
-        >
-          <div className="max-w-2xl">
-            <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
-              Pharmacist on Duty
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold tracking-tight">
-              Questions regarding medications, vaccines, or copays?
-            </h2>
-            <p className="mt-2 text-stone-300 text-sm leading-relaxed">
-              Visit us during business hours (Monday–Friday 9:30 AM–7 PM, Saturday 9:30 AM–5 PM) or call {business.phoneDisplay}. No appointment is ever needed for clinical advice or vaccines.
-            </p>
+        {/* Real Photo & Information Banner */}
+        <div className="rounded-card border border-pharmacy-border bg-pharmacy-forest text-white overflow-hidden shadow-warm-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
+            <div className="lg:col-span-8 space-y-3">
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block">
+                Pharmacist on Duty
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
+                Questions regarding medications, vaccines, or copays?
+              </h2>
+              <p className="text-stone-300 text-base leading-relaxed max-w-xl">
+                Visit us during business hours (Monday–Friday 9:30 AM–7 PM, Saturday 9:30 AM–5 PM) or call {business.phoneDisplay}. No appointment is ever needed for clinical consultations or adult walk-in vaccines.
+              </p>
+            </div>
+            <div className="lg:col-span-4 flex justify-end">
+              <div className="relative rounded-card overflow-hidden border border-emerald-800 w-full max-w-xs aspect-[4/3]">
+                <Image
+                  src="/images/riverdale-pharmacy-counter.png"
+                  alt="Customer service and prescription intake counter at Riverdale Pharmacy in the Bronx"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 30vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
