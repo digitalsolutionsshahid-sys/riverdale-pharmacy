@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://riverdalepharmacy.com'),
+  metadataBase: new URL('https://riverdalepharmacyny.com'),
   title: {
     default: 'Riverdale Pharmacy | Neighborhood Healthcare Trusted Since 1987 (Bronx, NY)',
     template: '%s | Riverdale Pharmacy',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://riverdalepharmacy.com',
+    url: 'https://riverdalepharmacyny.com',
     siteName: 'Riverdale Pharmacy',
     title: 'Riverdale Pharmacy | Neighborhood Healthcare Trusted Since 1987',
     description:

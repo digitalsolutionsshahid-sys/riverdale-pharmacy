@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Our History & Community Care Since 1987 | Riverdale Pharmacy',
     description:
       'Providing continuous, personalized pharmaceutical care to Riverdale and Bronx families since 1987.',
-    url: 'https://riverdalepharmacy.com/about',
+    url: 'https://riverdalepharmacyny.com/about',
     images: ['/images/riverdale-storefront-exterior.webp'],
   },
 };

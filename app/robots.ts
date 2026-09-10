@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://riverdalepharmacy.com';
+  const baseUrl = 'https://riverdalepharmacyny.com';
 
   return {
     rules: {

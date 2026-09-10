@@ -18,6 +18,7 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const drawerRef = React.useRef<HTMLDivElement>(null);
   const { business } = DESIGN_SYSTEM;
 
   useEffect(() => {
@@ -32,13 +33,54 @@ export function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  // Focus trap and Escape key listener for accessible mobile drawer
   useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    // Focus the first item in drawer on open
+    const focusTimer = setTimeout(() => {
+      if (drawerRef.current) {
+        const firstFocusable = drawerRef.current.querySelector<HTMLElement>(
+          'a[href], button:not([disabled])'
+        );
+        firstFocusable?.focus();
+      }
+    }, 50);
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setMobileMenuOpen(false);
+      if (e.key === 'Escape') {
+        setMobileMenuOpen(false);
+        return;
+      }
+
+      if (e.key === 'Tab' && drawerRef.current) {
+        const focusable = drawerRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
+
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+    return () => {
+      clearTimeout(focusTimer);
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full">
@@ -146,7 +188,13 @@ export function Navbar() {
 
         {/* 3. Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-pharmacy-surface border-b border-pharmacy-border shadow-warm-lg animate-in slide-in-from-top-2 duration-200">
+          <div
+            ref={drawerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile Navigation Menu"
+            className="lg:hidden bg-pharmacy-surface border-b border-pharmacy-border shadow-warm-lg animate-in slide-in-from-top-2 duration-200"
+          >
             <div className="px-4 pt-3 pb-6 space-y-2 max-w-7xl mx-auto">
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
@@ -154,6 +202,7 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`block px-3 py-3 rounded-md text-base font-medium transition-colors min-h-[44px] flex items-center ${
                       isActive
                         ? 'bg-pharmacy-surface-subtle text-pharmacy-forest font-semibold'
@@ -167,16 +216,18 @@ export function Navbar() {
               <div className="pt-4 mt-2 border-t border-pharmacy-border flex flex-col gap-3">
                 <Link
                   href="/services#refills"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover active:scale-[0.98] transition-all min-h-[44px]"
                 >
                   <span>Refill / Transfer Prescription</span>
-                  <ArrowUpRight className="w-4 h-4 text-pharmacy-amber" />
+                  <ArrowUpRight className="w-4 h-4 text-pharmacy-amber-accent" />
                 </Link>
                 <a
                   href={`tel:${business.phone}`}
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-button text-base font-medium border border-pharmacy-border text-pharmacy-ink hover:bg-pharmacy-surface-subtle transition-all min-h-[44px]"
                 >
-                  <Phone className="w-4 h-4 text-pharmacy-amber" />
+                  <Phone className="w-4 h-4 text-pharmacy-amber-accent" />
                   Call {business.phoneDisplay}
                 </a>
               </div>

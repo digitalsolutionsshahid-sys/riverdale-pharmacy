@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Clinical & Neighborhood Pharmacy Services | Riverdale Pharmacy',
     description:
       'Complete prescription management, walk-in adult immunizations, and essential community services in the Bronx.',
-    url: 'https://riverdalepharmacy.com/services',
+    url: 'https://riverdalepharmacyny.com/services',
     images: ['/images/riverdale-pharmacy-counter.webp'],
   },
 };
@@ -208,7 +208,7 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between"
+                className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm flex flex-col justify-between scroll-mt-28"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">

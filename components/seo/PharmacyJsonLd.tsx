@@ -7,12 +7,12 @@ export function PharmacyJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Pharmacy',
-    '@id': 'https://riverdalepharmacy.com/#pharmacy',
+    '@id': 'https://riverdalepharmacyny.com/#pharmacy',
     name: business.name,
     legalName: 'Riverdale Pharmacy',
-    url: 'https://riverdalepharmacy.com',
-    logo: 'https://riverdalepharmacy.com/images/riverdale-pharmacy-logo.png',
-    image: 'https://riverdalepharmacy.com/images/riverdale-storefront-exterior.webp',
+    url: 'https://riverdalepharmacyny.com',
+    logo: 'https://riverdalepharmacyny.com/images/riverdale-pharmacy-logo.png',
+    image: 'https://riverdalepharmacyny.com/images/riverdale-storefront-exterior.webp',
     description:
       'Independent neighborhood community pharmacy in Riverdale, Bronx, NY, established in 1987. Providing personalized prescriptions, free local delivery, walk-in vaccines, and COVID therapeutics.',
     telephone: '+1-718-543-7500',

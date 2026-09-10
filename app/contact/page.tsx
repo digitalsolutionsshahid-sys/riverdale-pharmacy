@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Contact & Store Hours | Riverdale Pharmacy (Bronx, NY)',
     description:
       'Visit Riverdale Pharmacy at 5669 Riverdale Ave in the northwest Bronx or call (718) 543-7500 for prescription questions and free local delivery.',
-    url: 'https://riverdalepharmacy.com/contact',
+    url: 'https://riverdalepharmacyny.com/contact',
     images: ['/images/riverdale-storefront-exterior.webp'],
   },
 };

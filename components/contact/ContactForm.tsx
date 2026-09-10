@@ -16,6 +16,7 @@ export function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -24,14 +25,30 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate swift submission handling
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || 'Unable to deliver message right now. Please call us directly.');
+      }
+
       setSubmitted(true);
-    }, 600);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Connection error. Please call our team at (718) 543-7500.';
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -80,6 +97,32 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      {/* Urgent Notice Banner */}
+      <div className="p-4 rounded-button bg-amber-50/80 border border-amber-300/80 text-amber-950 text-xs leading-relaxed flex items-start gap-2.5">
+        <AlertCircle className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
+        <div>
+          <span className="font-semibold block mb-0.5 text-amber-900">General Inquiries Only</span>
+          <span>
+            For urgent prescription matters, please call us directly at{' '}
+            <a href={`tel:${business.phone}`} className="font-bold underline text-pharmacy-forest hover:text-black">
+              {business.phoneDisplay}
+            </a>{' '}
+            — the form is for general inquiries only.
+          </span>
+        </div>
+      </div>
+
+      {/* Error Message */}
+      {errorMessage && (
+        <div
+          role="alert"
+          className="p-4 rounded-button bg-red-50 border border-red-200 text-red-900 text-xs leading-relaxed flex items-start gap-2"
+        >
+          <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+          <span>{errorMessage}</span>
+        </div>
+      )}
+
       {/* Full Name */}
       <div>
         <label htmlFor="contact-name" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">

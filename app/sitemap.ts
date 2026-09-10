@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://riverdalepharmacy.com';
+  const baseUrl = 'https://riverdalepharmacyny.com';
   const currentDate = new Date();
 
   return [

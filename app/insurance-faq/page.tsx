@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Insurance Plans, Transfers & Copay FAQ | Riverdale Pharmacy',
     description:
       'Clear, straightforward answers about prescription copays, insurance networks, and fast pharmacy-to-pharmacy transfers.',
-    url: 'https://riverdalepharmacy.com/insurance-faq',
+    url: 'https://riverdalepharmacyny.com/insurance-faq',
     images: ['/images/riverdale-rx-care.webp'],
   },
 };
