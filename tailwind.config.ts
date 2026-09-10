@@ -22,14 +22,15 @@ const config: Config = {
             light: '#EBF2EE', // Soft green badge background
           },
           amber: {
-            DEFAULT: '#C28E47', // Warm apothecary amber
-            hover: '#AA7938',
+            DEFAULT: '#8B5A16', // Rich apothecary amber - WCAG AA compliant on light backgrounds (≥ 5.1:1)
+            hover: '#734A10',
             light: '#FAF3E8', // Soft amber badge background
+            accent: '#E5B869', // Bright warm amber - WCAG AA compliant on dark forest green (≥ 6.6:1)
           },
           ink: {
             DEFAULT: '#1D201E', // Warm charcoal body text
-            muted: '#5A635E', // Secondary muted text
-            subtle: '#818B85', // Captions & metadata
+            muted: '#5A635E', // Secondary muted text (≥ 6.2:1)
+            subtle: '#626C66', // Captions & metadata (≥ 5.4:1)
           },
         },
       },

@@ -26,14 +26,15 @@ export const DESIGN_SYSTEM = {
       forestTint: '#EBF2EE',
     },
     accent: {
-      amber: '#C28E47', // Warm apothecary amber
-      amberHover: '#AA7938',
+      amber: '#8B5A16', // Rich apothecary amber (≥ 5.1:1 on light)
+      amberHover: '#734A10',
       amberTint: '#FAF3E8',
+      amberAccent: '#E5B869', // High-contrast amber on forest green (≥ 6.6:1)
     },
     ink: {
       primary: '#1D201E', // Warm charcoal body
       muted: '#5A635E', // Secondary guidance text
-      subtle: '#818B85', // Metadata, timestamps
+      subtle: '#626C66', // Metadata, timestamps (≥ 5.4:1)
     },
     border: {
       light: '#E8E3DA',

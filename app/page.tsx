@@ -83,7 +83,7 @@ export default function HomePage() {
               <div className="relative group">
                 <div className="relative rounded-card overflow-hidden border border-pharmacy-border bg-pharmacy-surface shadow-warm-lg aspect-[4/3] sm:aspect-[16/11]">
                   <Image
-                    src="/images/riverdale-storefront-exterior.jpg"
+                    src="/images/riverdale-storefront-exterior.webp"
                     alt="Authentic storefront exterior of Riverdale Pharmacy at 5669 Riverdale Avenue in the Bronx, showing street facade and accessible entrance"
                     fill
                     priority
@@ -283,7 +283,7 @@ export default function HomePage() {
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative rounded-card overflow-hidden border border-pharmacy-border bg-pharmacy-surface-subtle shadow-warm-lg aspect-square sm:aspect-[4/3] lg:aspect-square">
                 <Image
-                  src="/images/riverdale-rx-care.png"
+                  src="/images/riverdale-rx-care.webp"
                   alt="Pharmacist consultation and prescription medication dispensing counter at Riverdale Pharmacy"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -457,7 +457,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
-              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-2">
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber-accent font-semibold block mb-2">
                 We Are Here For You
               </span>
               <h2 id="callout-heading" className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
@@ -470,7 +470,7 @@ export default function HomePage() {
             <div className="flex flex-wrap items-center gap-4 shrink-0">
               <a
                 href={`tel:${business.phone}`}
-                className="interactive-btn inline-flex items-center gap-2 px-7 py-4 rounded-button text-base font-semibold bg-pharmacy-amber text-slate-900 hover:bg-pharmacy-amber-hover transition-colors shadow-sm min-h-[48px]"
+                className="interactive-btn inline-flex items-center gap-2 px-7 py-4 rounded-button text-base font-semibold bg-pharmacy-amber text-white hover:bg-pharmacy-amber-hover transition-colors shadow-sm min-h-[48px]"
               >
                 <Phone className="w-4 h-4" />
                 <span>Call {business.phoneDisplay}</span>

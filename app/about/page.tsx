@@ -10,17 +10,24 @@ import {
   PhoneCall,
   BellRing,
   ShieldCheck,
-  MapPin,
-  Phone,
   CheckCircle2,
-  ArrowRight,
 } from 'lucide-react';
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
 export const metadata: Metadata = {
-  title: 'About Us | Neighborhood Healthcare Since 1987',
+  title: 'Our History & Community Care Since 1987 | Riverdale Pharmacy',
   description:
-    'Learn about Riverdale Pharmacy: serving the Riverdale and Bronx community since 1987. Recently under new ownership with modernized phone and text/email refill services.',
+    'Learn about Riverdale Pharmacy’s 35-year commitment to independent Bronx healthcare, our approachable pharmacists, and modernized prescription update services.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'Our History & Community Care Since 1987 | Riverdale Pharmacy',
+    description:
+      'Providing continuous, personalized pharmaceutical care to Riverdale and Bronx families since 1987.',
+    url: 'https://riverdalepharmacy.com/about',
+    images: ['/images/riverdale-storefront-exterior.webp'],
+  },
 };
 
 export default function AboutPage() {
@@ -80,7 +87,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5">
             <div className="relative rounded-card overflow-hidden border border-pharmacy-border bg-pharmacy-surface shadow-warm-lg aspect-[4/3]">
               <Image
-                src="/images/riverdale-storefront-exterior.jpg"
+                src="/images/riverdale-storefront-exterior.webp"
                 alt="Exterior view of Riverdale Pharmacy storefront at 5669 Riverdale Avenue in Bronx, NY, established 1987"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -116,7 +123,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative rounded-card overflow-hidden border border-pharmacy-border shadow-warm aspect-[16/10]">
                 <Image
-                  src="/images/riverdale-pharmacy-counter.png"
+                  src="/images/riverdale-pharmacy-counter.webp"
                   alt="Interior counter and dispensing area at Riverdale Pharmacy in Bronx, NY"
                   fill
                   sizes="(max-width: 1024px) 100vw, 35vw"
@@ -179,7 +186,7 @@ export default function AboutPage() {
           <div className="flex items-center gap-4 shrink-0">
             <Link
               href="/contact"
-              className="interactive-btn px-6 py-3.5 rounded-button text-base font-semibold bg-pharmacy-amber text-slate-900 hover:bg-pharmacy-amber-hover transition-colors min-h-[44px] flex items-center shadow-sm"
+              className="interactive-btn px-6 py-3.5 rounded-button text-base font-semibold bg-pharmacy-amber text-white hover:bg-pharmacy-amber-hover transition-colors min-h-[44px] flex items-center shadow-sm"
             >
               Store Hours & Map
             </Link>

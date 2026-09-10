@@ -16,22 +16,22 @@ export function Footer() {
               <span className="font-serif text-2xl font-bold text-white tracking-tight block">
                 {business.name}
               </span>
-              <span className="text-xs tracking-widest uppercase text-pharmacy-amber font-semibold block mt-0.5">
+              <span className="text-xs tracking-widest uppercase text-pharmacy-amber-accent font-semibold block mt-0.5">
                 ESTABLISHED 1987 • BRONX, NY
               </span>
             </div>
             <p className="text-sm text-stone-300 leading-relaxed">
               Serving the Riverdale and Bronx community since 1987. Recently under new ownership with modernized automated phone services, text/email prescription updates, and dependable free neighborhood delivery.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-pharmacy-amber">
-              <ShieldCheck className="w-4 h-4 text-pharmacy-amber shrink-0" />
+            <div className="pt-2 flex items-center gap-2 text-xs text-pharmacy-amber-accent">
+              <ShieldCheck className="w-4 h-4 text-pharmacy-amber-accent shrink-0" />
               <span>Licensed NYS Pharmacy • Medicare & Medicaid</span>
             </div>
           </div>
 
           {/* Col 2: Navigation Links */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber-accent">
               Pharmacy & Services
             </h3>
             <ul className="space-y-2.5 text-sm">
@@ -65,12 +65,12 @@ export function Footer() {
 
           {/* Col 3: Operating Hours */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber-accent">
               Store & Pharmacy Hours
             </h3>
             <div className="space-y-2.5 text-sm text-stone-300">
               <div className="flex items-start gap-2">
-                <Clock className="w-4 h-4 text-pharmacy-amber mt-0.5 shrink-0" />
+                <Clock className="w-4 h-4 text-pharmacy-amber-accent mt-0.5 shrink-0" />
                 <div>
                   <p className="font-medium text-white">Monday – Friday</p>
                   <p className="text-xs text-stone-300">9:30 AM – 7:00 PM</p>
@@ -95,12 +95,12 @@ export function Footer() {
 
           {/* Col 4: Location & Contact */}
           <div className="space-y-4">
-            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber">
+            <h3 className="text-xs uppercase tracking-wider font-semibold text-pharmacy-amber-accent">
               Contact & Location
             </h3>
             <div className="space-y-3 text-sm text-stone-300">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-pharmacy-amber mt-0.5 shrink-0" />
+                <MapPin className="w-4 h-4 text-pharmacy-amber-accent mt-0.5 shrink-0" />
                 <span>
                   {business.address.street}
                   <br />
@@ -108,7 +108,7 @@ export function Footer() {
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-pharmacy-amber shrink-0" />
+                <Phone className="w-4 h-4 text-pharmacy-amber-accent shrink-0" />
                 <a href={`tel:${business.phone}`} className="hover:text-white font-medium">
                   {business.phoneDisplay}
                 </a>
@@ -121,7 +121,7 @@ export function Footer() {
                   className="inline-flex items-center gap-1.5 text-xs text-stone-300 hover:text-white transition-colors"
                 >
                   <span>Yelp: {business.yelp.rating}★ ({business.yelp.reviewsCount} reviews)</span>
-                  <ExternalLink className="w-3 h-3 text-pharmacy-amber" />
+                  <ExternalLink className="w-3 h-3 text-pharmacy-amber-accent" />
                 </a>
               </div>
             </div>

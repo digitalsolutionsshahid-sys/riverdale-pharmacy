@@ -20,9 +20,19 @@ import {
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
 export const metadata: Metadata = {
-  title: 'Pharmacy Services | Full Clinical & Neighborhood Services',
+  title: 'Clinical & Neighborhood Pharmacy Services | Riverdale Pharmacy',
   description:
-    'Comprehensive services at Riverdale Pharmacy: prescription filling & free delivery, walk-in adult vaccines (age 18+), COVID therapeutics, DMV eye exams, passport photos, notary, and prescription transfers.',
+    'Explore our comprehensive services including prescription refills, free local Bronx delivery, walk-in adult vaccines, COVID antivirals, and DMV vision tests.',
+  alternates: {
+    canonical: '/services',
+  },
+  openGraph: {
+    title: 'Clinical & Neighborhood Pharmacy Services | Riverdale Pharmacy',
+    description:
+      'Complete prescription management, walk-in adult immunizations, and essential community services in the Bronx.',
+    url: 'https://riverdalepharmacy.com/services',
+    images: ['/images/riverdale-pharmacy-counter.webp'],
+  },
 };
 
 export default function ServicesPage() {
@@ -232,7 +242,7 @@ export default function ServicesPage() {
         <div className="rounded-card border border-pharmacy-border bg-pharmacy-forest text-white overflow-hidden shadow-warm-lg">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
             <div className="lg:col-span-8 space-y-3">
-              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block">
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber-accent font-semibold block">
                 Pharmacist on Duty
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
@@ -245,7 +255,7 @@ export default function ServicesPage() {
             <div className="lg:col-span-4 flex justify-end">
               <div className="relative rounded-card overflow-hidden border border-emerald-800 w-full max-w-xs aspect-[4/3]">
                 <Image
-                  src="/images/riverdale-pharmacy-counter.png"
+                  src="/images/riverdale-pharmacy-counter.webp"
                   alt="Customer service and prescription intake counter at Riverdale Pharmacy in the Bronx"
                   fill
                   sizes="(max-width: 1024px) 100vw, 30vw"

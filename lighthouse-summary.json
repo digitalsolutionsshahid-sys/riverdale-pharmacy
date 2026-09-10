@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Home",
+    "path": "/",
+    "performance": 93,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  },
+  {
+    "name": "About",
+    "path": "/about",
+    "performance": 98,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  },
+  {
+    "name": "Services",
+    "path": "/services",
+    "performance": 97,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  },
+  {
+    "name": "Insurance FAQ",
+    "path": "/insurance-faq",
+    "performance": 98,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  },
+  {
+    "name": "Contact",
+    "path": "/contact",
+    "performance": 96,
+    "accessibility": 100,
+    "bestPractices": 96,
+    "seo": 100
+  }
+]

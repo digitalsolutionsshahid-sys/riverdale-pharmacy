@@ -13,9 +13,19 @@ import {
 import { DESIGN_SYSTEM } from '@/lib/design-system';
 
 export const metadata: Metadata = {
-  title: 'Insurance Plans & Prescription FAQ | Riverdale Pharmacy',
+  title: 'Insurance Plans, Transfers & Copay FAQ | Riverdale Pharmacy',
   description:
-    'Clear answers on prescription transfers, accepted insurance plans (Medicare, Medicaid, major carriers), mail-order limitations, and turnaround timelines at Riverdale Pharmacy in Bronx, NY.',
+    'Get clear answers on prescription transfers, accepted Medicare, Medicaid, and commercial plans, mail-order options, and everyday fill timelines at Riverdale Pharmacy.',
+  alternates: {
+    canonical: '/insurance-faq',
+  },
+  openGraph: {
+    title: 'Insurance Plans, Transfers & Copay FAQ | Riverdale Pharmacy',
+    description:
+      'Clear, straightforward answers about prescription copays, insurance networks, and fast pharmacy-to-pharmacy transfers.',
+    url: 'https://riverdalepharmacy.com/insurance-faq',
+    images: ['/images/riverdale-rx-care.webp'],
+  },
 };
 
 export default function InsuranceFaqPage() {
@@ -189,7 +199,7 @@ export default function InsuranceFaqPage() {
           ))}
         </div>
 
-        {/* Real Site Photo & Callout Card */}
+        {/* Real Photo & Callout Card */}
         <div className="rounded-card border border-pharmacy-border bg-pharmacy-surface-subtle overflow-hidden shadow-warm-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
             <div className="lg:col-span-8 space-y-3">
@@ -207,7 +217,7 @@ export default function InsuranceFaqPage() {
                   href={`tel:${business.phone}`}
                   className="interactive-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 text-pharmacy-amber" />
+                  <Phone className="w-4 h-4 text-pharmacy-amber-accent" />
                   <span>Call {business.phoneDisplay}</span>
                 </a>
               </div>
@@ -215,7 +225,7 @@ export default function InsuranceFaqPage() {
             <div className="lg:col-span-4 flex justify-center lg:justify-end">
               <div className="relative rounded-card overflow-hidden border border-pharmacy-border w-full max-w-xs aspect-square shadow-warm">
                 <Image
-                  src="/images/riverdale-rx-care.png"
+                  src="/images/riverdale-rx-care.webp"
                   alt="Pharmacist checking insurance prescription formulary details at Riverdale Pharmacy counter in Bronx, NY"
                   fill
                   sizes="(max-width: 1024px) 100vw, 30vw"

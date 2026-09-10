@@ -47,26 +47,26 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-3 sm:gap-4 text-emerald-100/90 font-medium text-center sm:text-left">
             <span className="inline-flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-pharmacy-amber animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-pharmacy-amber-accent animate-pulse" />
               Serving Riverdale & the Bronx Since 1987
             </span>
             <span className="hidden md:inline text-emerald-400/40">•</span>
-            <span className="hidden md:inline-flex items-center gap-1 text-emerald-200/80">
-              <MapPin className="w-3.5 h-3.5 text-pharmacy-amber" />
+            <span className="hidden md:inline-flex items-center gap-1 text-emerald-100">
+              <MapPin className="w-3.5 h-3.5 text-pharmacy-amber-accent" />
               {business.address.street}, Bronx, NY
             </span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="hidden sm:inline-flex items-center gap-1 text-emerald-200/80">
-              <Clock className="w-3.5 h-3.5 text-pharmacy-amber" />
+            <span className="hidden sm:inline-flex items-center gap-1 text-emerald-100">
+              <Clock className="w-3.5 h-3.5 text-pharmacy-amber-accent" />
               Mon–Fri 9:30 AM – 7 PM
             </span>
             <a
               href={`tel:${business.phone}`}
-              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-pharmacy-amber transition-colors min-h-[32px]"
+              className="inline-flex items-center gap-1.5 font-semibold text-white hover:text-pharmacy-amber-accent transition-colors min-h-[32px]"
             >
-              <Phone className="w-3.5 h-3.5 text-pharmacy-amber" />
+              <Phone className="w-3.5 h-3.5 text-pharmacy-amber-accent" />
               {business.phoneDisplay}
             </a>
           </div>

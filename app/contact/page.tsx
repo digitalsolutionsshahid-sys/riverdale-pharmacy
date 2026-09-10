@@ -15,9 +15,19 @@ import { DESIGN_SYSTEM } from '@/lib/design-system';
 import { ContactForm } from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
-  title: 'Contact & Store Hours | 5669 Riverdale Ave (Bronx, NY)',
+  title: 'Contact & Store Hours | Riverdale Pharmacy (Bronx, NY)',
   description:
     'Contact Riverdale Pharmacy at 5669 Riverdale Ave, Bronx NY 10471. Call (718) 543-7500 or send us a message. Open Monday–Friday 9:30 AM–7 PM, Saturday 9:30 AM–5 PM.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact & Store Hours | Riverdale Pharmacy (Bronx, NY)',
+    description:
+      'Visit Riverdale Pharmacy at 5669 Riverdale Ave in the northwest Bronx or call (718) 543-7500 for prescription questions and free local delivery.',
+    url: 'https://riverdalepharmacy.com/contact',
+    images: ['/images/riverdale-storefront-exterior.webp'],
+  },
 };
 
 export default function ContactPage() {

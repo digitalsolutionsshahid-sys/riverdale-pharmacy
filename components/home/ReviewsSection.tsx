@@ -109,7 +109,7 @@ export function ReviewsSection() {
                   <span className="text-[0.7rem] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-full bg-pharmacy-forest-light text-pharmacy-forest border border-emerald-900/10">
                     {review.theme}
                   </span>
-                  <div className="flex items-center text-amber-500" aria-label={`${review.rating} out of 5 stars`}>
+                  <div className="flex items-center text-amber-500" role="img" aria-label={`${review.rating} out of 5 stars`}>
                     {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
                     ))}
