@@ -54,24 +54,24 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div
-        className="p-8 rounded-card border border-emerald-800/20 bg-emerald-50/60 text-pharmacy-forest space-y-4 animate-in fade-in duration-300"
+        className="p-8 rounded-card border border-emerald-800/20 dark:border-emerald-500/30 bg-emerald-50/60 dark:bg-emerald-950/30 text-pharmacy-forest dark:text-emerald-300 space-y-4 animate-in fade-in duration-300"
         role="status"
         aria-live="polite"
       >
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-button bg-emerald-800 text-white flex items-center justify-center shrink-0">
-            <CheckCircle2 className="w-6 h-6 text-pharmacy-amber" />
+          <div className="w-10 h-10 rounded-button bg-emerald-800 dark:bg-emerald-700 text-white flex items-center justify-center shrink-0">
+            <CheckCircle2 className="w-6 h-6 text-pharmacy-amber dark:text-amber-300" />
           </div>
-          <h3 className="font-serif text-2xl font-bold text-pharmacy-forest">
+          <h3 className="font-serif text-2xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
             Message Received
           </h3>
         </div>
-        <p className="text-sm text-pharmacy-ink-muted leading-relaxed">
-          Thank you, <span className="font-semibold text-pharmacy-forest">{formData.fullName}</span>. Your message has been sent to our pharmacy team at 5669 Riverdale Ave. A staff member will follow up with you promptly.
+        <p className="text-sm text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted leading-relaxed">
+          Thank you, <span className="font-semibold text-pharmacy-forest dark:text-pharmacy-dark-forest">{formData.fullName}</span>. Your message has been sent to our pharmacy team at 5669 Riverdale Ave. A staff member will follow up with you promptly.
         </p>
-        <p className="text-xs text-pharmacy-ink-subtle">
+        <p className="text-xs text-pharmacy-ink-subtle dark:text-pharmacy-dark-ink-subtle">
           For urgent prescription matters or immediate same-day delivery requests, please call us directly at{' '}
-          <a href={`tel:${business.phone}`} className="font-bold text-pharmacy-forest underline">
+          <a href={`tel:${business.phone}`} className="font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest underline">
             {business.phoneDisplay}
           </a>.
         </p>
@@ -87,7 +87,7 @@ export function ContactForm() {
               message: '',
             });
           }}
-          className="mt-2 text-xs font-semibold uppercase tracking-wider text-pharmacy-forest hover:text-pharmacy-forest-hover underline"
+          className="mt-2 text-xs font-semibold uppercase tracking-wider text-pharmacy-forest dark:text-pharmacy-dark-forest hover:text-pharmacy-forest-hover dark:hover:text-pharmacy-dark-forest-hover underline"
         >
           Send another message
         </button>
@@ -98,13 +98,13 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       {/* Urgent Notice Banner */}
-      <div className="p-4 rounded-button bg-amber-50/80 border border-amber-300/80 text-amber-950 text-xs leading-relaxed flex items-start gap-2.5">
-        <AlertCircle className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
+      <div className="p-4 rounded-button bg-amber-50/80 dark:bg-amber-950/30 border border-amber-300/80 dark:border-amber-700/50 text-amber-950 dark:text-amber-200 text-xs leading-relaxed flex items-start gap-2.5">
+        <AlertCircle className="w-4 h-4 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" />
         <div>
-          <span className="font-semibold block mb-0.5 text-amber-900">General Inquiries Only</span>
+          <span className="font-semibold block mb-0.5 text-amber-900 dark:text-amber-300">General Inquiries Only</span>
           <span>
             For urgent prescription matters, please call us directly at{' '}
-            <a href={`tel:${business.phone}`} className="font-bold underline text-pharmacy-forest hover:text-black">
+            <a href={`tel:${business.phone}`} className="font-bold underline text-pharmacy-forest dark:text-pharmacy-dark-amber hover:text-black dark:hover:text-amber-100">
               {business.phoneDisplay}
             </a>{' '}
             — the form is for general inquiries only.
@@ -116,17 +116,17 @@ export function ContactForm() {
       {errorMessage && (
         <div
           role="alert"
-          className="p-4 rounded-button bg-red-50 border border-red-200 text-red-900 text-xs leading-relaxed flex items-start gap-2"
+          className="p-4 rounded-button bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800/50 text-red-900 dark:text-red-300 text-xs leading-relaxed flex items-start gap-2"
         >
-          <AlertCircle className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
+          <AlertCircle className="w-4 h-4 text-red-600 dark:text-red-400 shrink-0 mt-0.5" />
           <span>{errorMessage}</span>
         </div>
       )}
 
       {/* Full Name */}
       <div>
-        <label htmlFor="contact-name" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">
-          Full Name <span className="text-red-700" aria-hidden="true">*</span>
+        <label htmlFor="contact-name" className="block text-sm font-semibold text-pharmacy-forest dark:text-pharmacy-dark-ink mb-1.5">
+          Full Name <span className="text-red-700 dark:text-red-400" aria-hidden="true">*</span>
         </label>
         <input
           id="contact-name"
@@ -137,15 +137,15 @@ export function ContactForm() {
           value={formData.fullName}
           onChange={handleChange}
           placeholder="e.g. Eleanor Vance"
-          className="w-full px-4 py-3 rounded-button border border-pharmacy-border bg-white text-pharmacy-ink placeholder:text-pharmacy-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
+          className="w-full px-4 py-3 rounded-button border border-pharmacy-border dark:border-pharmacy-dark-border bg-white dark:bg-pharmacy-dark-surface text-pharmacy-ink dark:text-pharmacy-dark-ink placeholder:text-pharmacy-ink-subtle/70 dark:placeholder:text-pharmacy-dark-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
         />
       </div>
 
       {/* Email & Phone Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="contact-email" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">
-            Email Address <span className="text-red-700" aria-hidden="true">*</span>
+          <label htmlFor="contact-email" className="block text-sm font-semibold text-pharmacy-forest dark:text-pharmacy-dark-ink mb-1.5">
+            Email Address <span className="text-red-700 dark:text-red-400" aria-hidden="true">*</span>
           </label>
           <input
             id="contact-email"
@@ -156,13 +156,13 @@ export function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full px-4 py-3 rounded-button border border-pharmacy-border bg-white text-pharmacy-ink placeholder:text-pharmacy-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
+            className="w-full px-4 py-3 rounded-button border border-pharmacy-border dark:border-pharmacy-dark-border bg-white dark:bg-pharmacy-dark-surface text-pharmacy-ink dark:text-pharmacy-dark-ink placeholder:text-pharmacy-ink-subtle/70 dark:placeholder:text-pharmacy-dark-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
           />
         </div>
 
         <div>
-          <label htmlFor="contact-phone" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">
-            Phone Number <span className="text-xs font-normal text-pharmacy-ink-muted">(Optional)</span>
+          <label htmlFor="contact-phone" className="block text-sm font-semibold text-pharmacy-forest dark:text-pharmacy-dark-ink mb-1.5">
+            Phone Number <span className="text-xs font-normal text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted">(Optional)</span>
           </label>
           <input
             id="contact-phone"
@@ -171,14 +171,14 @@ export function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             placeholder="(718) 555-0123"
-            className="w-full px-4 py-3 rounded-button border border-pharmacy-border bg-white text-pharmacy-ink placeholder:text-pharmacy-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
+            className="w-full px-4 py-3 rounded-button border border-pharmacy-border dark:border-pharmacy-dark-border bg-white dark:bg-pharmacy-dark-surface text-pharmacy-ink dark:text-pharmacy-dark-ink placeholder:text-pharmacy-ink-subtle/70 dark:placeholder:text-pharmacy-dark-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
           />
         </div>
       </div>
 
       {/* Inquiry Subject */}
       <div>
-        <label htmlFor="contact-subject" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">
+        <label htmlFor="contact-subject" className="block text-sm font-semibold text-pharmacy-forest dark:text-pharmacy-dark-ink mb-1.5">
           Subject / Inquiry Type
         </label>
         <select
@@ -186,7 +186,7 @@ export function ContactForm() {
           name="subject"
           value={formData.subject}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-button border border-pharmacy-border bg-white text-pharmacy-ink focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
+          className="w-full px-4 py-3 rounded-button border border-pharmacy-border dark:border-pharmacy-dark-border bg-white dark:bg-pharmacy-dark-surface text-pharmacy-ink dark:text-pharmacy-dark-ink focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest focus-visible:outline-none transition-shadow text-sm min-h-[44px]"
         >
           <option value="Prescription Refill / Transfer">Prescription Refill / Transfer</option>
           <option value="Free Neighborhood Delivery Question">Free Neighborhood Delivery Question</option>
@@ -199,8 +199,8 @@ export function ContactForm() {
 
       {/* Message Textarea */}
       <div>
-        <label htmlFor="contact-message" className="block text-sm font-semibold text-pharmacy-forest mb-1.5">
-          How can our pharmacists assist you? <span className="text-red-700" aria-hidden="true">*</span>
+        <label htmlFor="contact-message" className="block text-sm font-semibold text-pharmacy-forest dark:text-pharmacy-dark-ink mb-1.5">
+          How can our pharmacists assist you? <span className="text-red-700 dark:text-red-400" aria-hidden="true">*</span>
         </label>
         <textarea
           id="contact-message"
@@ -211,7 +211,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           placeholder="Please share your question, medication details, or request..."
-          className="w-full px-4 py-3 rounded-button border border-pharmacy-border bg-white text-pharmacy-ink placeholder:text-pharmacy-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest focus-visible:outline-none transition-shadow text-sm"
+          className="w-full px-4 py-3 rounded-button border border-pharmacy-border dark:border-pharmacy-dark-border bg-white dark:bg-pharmacy-dark-surface text-pharmacy-ink dark:text-pharmacy-dark-ink placeholder:text-pharmacy-ink-subtle/70 dark:placeholder:text-pharmacy-dark-ink-subtle/70 focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest focus-visible:outline-none transition-shadow text-sm"
         />
       </div>
 
@@ -219,15 +219,15 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting || !formData.fullName || !formData.email || !formData.message}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-pharmacy-forest min-h-[48px]"
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest dark:bg-pharmacy-dark-forest dark:text-pharmacy-dark-bg text-white hover:bg-pharmacy-forest-hover dark:hover:bg-pharmacy-dark-forest-hover active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-sm focus-visible:ring-2 focus-visible:ring-pharmacy-forest dark:focus-visible:ring-pharmacy-dark-forest min-h-[48px]"
       >
-        <Send className="w-4 h-4 text-pharmacy-amber" />
+        <Send className="w-4 h-4 text-pharmacy-amber dark:text-pharmacy-dark-bg" />
         <span>{isSubmitting ? 'Sending Message...' : 'Send Message to Pharmacy'}</span>
       </button>
 
-      <p className="text-xs text-pharmacy-ink-subtle text-center">
+      <p className="text-xs text-pharmacy-ink-subtle dark:text-pharmacy-dark-ink-subtle text-center">
         Your information is kept strictly confidential. For immediate medication assistance, please call{' '}
-        <a href={`tel:${business.phone}`} className="text-pharmacy-forest font-semibold underline">
+        <a href={`tel:${business.phone}`} className="text-pharmacy-forest dark:text-pharmacy-dark-forest font-semibold underline">
           {business.phoneDisplay}
         </a>.
       </p>

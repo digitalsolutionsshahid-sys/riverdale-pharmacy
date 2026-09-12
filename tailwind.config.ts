@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -31,6 +32,30 @@ const config: Config = {
             DEFAULT: '#1D201E', // Warm charcoal body text
             muted: '#5A635E', // Secondary muted text (≥ 6.2:1)
             subtle: '#626C66', // Captions & metadata (≥ 5.4:1)
+          },
+          // Dark Theme: Editorial Botanical Charcoal
+          dark: {
+            bg: '#101412', // Deep botanical charcoal ground
+            surface: '#161C19', // Elevated card surface
+            'surface-subtle': '#1F2723', // Muted container / hover panel
+            border: '#26332C', // Subtle warm division border
+            'border-strong': '#36473E', // Defined active input/card border
+            forest: {
+              DEFAULT: '#52B788', // Luminous sage/emerald text & accents (≥ 7.5:1)
+              hover: '#74C69D',
+              light: 'rgba(82, 183, 136, 0.12)', // Subtle badge background
+              bg: '#1B3B2B', // Deep button base
+            },
+            amber: {
+              DEFAULT: '#E5B869', // Glowing apothecary gold (≥ 8.8:1)
+              hover: '#F3C77C',
+              light: 'rgba(229, 184, 105, 0.14)',
+            },
+            ink: {
+              DEFAULT: '#F4F2ED', // Warm linen white (≥ 15.2:1)
+              muted: '#B2BDB6', // Soft sage-gray (≥ 8.2:1)
+              subtle: '#8B968F', // Captions & metadata (≥ 5.1:1)
+            },
           },
         },
       },

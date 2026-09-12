@@ -7,7 +7,7 @@ export function Footer() {
   const { business } = DESIGN_SYSTEM;
 
   return (
-    <footer className="bg-pharmacy-forest text-stone-200 border-t border-emerald-950/60 mt-auto">
+    <footer className="bg-pharmacy-forest dark:bg-[#0c120e] text-stone-200 border-t border-emerald-950/60 dark:border-emerald-950/80 mt-auto transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Col 1: Heritage & Identity */}

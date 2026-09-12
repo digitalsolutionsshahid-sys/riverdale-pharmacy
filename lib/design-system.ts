@@ -40,6 +40,34 @@ export const DESIGN_SYSTEM = {
       light: '#E8E3DA',
       strong: '#D3CBC0',
     },
+    // Dark Theme: Warm Botanical Apothecary (Strict WCAG AA/AAA)
+    dark: {
+      canvas: {
+        bg: '#101412', // Deep botanical charcoal (warm undertone)
+        surface: '#161C19', // Elevated card surface
+        subtle: '#1F2723', // Muted panel & badge ground
+      },
+      primary: {
+        forest: '#52B788', // Luminous sage/emerald (≥ 7.5:1 against #101412)
+        forestHover: '#74C69D',
+        forestBg: '#1B3B2B', // Deep solid button base
+        forestTint: 'rgba(82, 183, 136, 0.12)',
+      },
+      accent: {
+        amber: '#E5B869', // Glowing apothecary gold (≥ 8.8:1 against #101412)
+        amberHover: '#F3C77C',
+        amberTint: 'rgba(229, 184, 105, 0.14)',
+      },
+      ink: {
+        primary: '#F4F2ED', // Warm linen white (≥ 15.2:1 against #101412)
+        muted: '#B2BDB6', // Soft sage-gray (≥ 8.2:1 against #101412)
+        subtle: '#8B968F', // Secondary metadata (≥ 5.1:1 against #101412)
+      },
+      border: {
+        light: '#26332C', // Subtle warm division
+        strong: '#36473E', // Defined active border
+      },
+    },
   },
 
   // Spacing Discipline

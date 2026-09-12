@@ -8,11 +8,26 @@
   --color-surface-subtle: #F4F0E8;
   --color-forest: #1B3B2B;
   --color-forest-hover: #132B20;
-  --color-amber: #C28E47;
-  --color-amber-hover: #AA7938;
+  --color-amber: #8B5A16;
+  --color-amber-hover: #734A10;
   --color-ink: #1D201E;
   --color-ink-muted: #5A635E;
+  --color-ink-subtle: #626C66;
   --color-border: #E8E3DA;
+}
+
+.dark {
+  --color-bg: #101412;
+  --color-surface: #161C19;
+  --color-surface-subtle: #1F2723;
+  --color-forest: #52B788;
+  --color-forest-hover: #74C69D;
+  --color-amber: #E5B869;
+  --color-amber-hover: #F3C77C;
+  --color-ink: #F4F2ED;
+  --color-ink-muted: #B2BDB6;
+  --color-ink-subtle: #8B968F;
+  --color-border: #26332C;
 }
 
 @layer base {
@@ -27,6 +42,7 @@
 
   body {
     background-color: var(--color-bg);
+    color: var(--color-ink);
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -36,10 +52,22 @@
     color: #1B3B2B;
   }
 
-  /* Accessibility: Visible, high-contrast focus rings */
+  .dark ::selection {
+    background-color: #1B3B2B;
+    color: #F4F2ED;
+  }
+
+  /* Accessibility: Visible, high-contrast focus rings in both themes */
   :focus-visible {
     outline: 2px solid var(--color-forest);
     outline-offset: 2px;
+  }
+
+  /* Dark-mode friendly Google Maps Embed */
+  .dark iframe[src*="maps.google.com"],
+  .dark iframe[title*="Google Map"] {
+    filter: invert(90%) hue-rotate(180deg) contrast(95%) brightness(95%);
+    transition: filter 0.3s ease;
   }
 }
 

@@ -4,6 +4,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { PharmacyJsonLd } from '@/components/seo/PharmacyJsonLd';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -73,29 +74,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${jakarta.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${jakarta.variable}`}>
       <head>
         <PharmacyJsonLd />
       </head>
-      <body className="font-sans min-h-screen flex flex-col bg-pharmacy-bg text-pharmacy-ink antialiased">
-        {/* Accessibility: High contrast keyboard skip link */}
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-pharmacy-forest text-white rounded-button font-medium shadow-warm-md focus:outline-none focus:ring-2 focus:ring-pharmacy-amber"
-        >
-          Skip to main content
-        </a>
+      <body className="font-sans min-h-screen flex flex-col bg-pharmacy-bg dark:bg-pharmacy-dark-bg text-pharmacy-ink dark:text-pharmacy-dark-ink transition-colors duration-200 antialiased">
+        <ThemeProvider>
+          {/* Accessibility: High contrast keyboard skip link */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-pharmacy-forest dark:bg-pharmacy-dark-forest dark:text-pharmacy-dark-bg text-white rounded-button font-medium shadow-warm-md focus:outline-none focus:ring-2 focus:ring-pharmacy-amber dark:focus:ring-pharmacy-dark-amber"
+          >
+            Skip to main content
+          </a>
 
-        {/* Sticky Base Navigation */}
-        <Navbar />
+          {/* Sticky Base Navigation */}
+          <Navbar />
 
-        {/* Main Content Area */}
-        <main id="main-content" className="flex-1 flex flex-col">
-          {children}
-        </main>
+          {/* Main Content Area */}
+          <main id="main-content" className="flex-1 flex flex-col">
+            {children}
+          </main>
 
-        {/* Footer */}
-        <Footer />
+          {/* Footer */}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -95,70 +95,70 @@ export default function InsuranceFaqPage() {
   ];
 
   return (
-    <div className="w-full flex-1 py-16 sm:py-24 bg-pharmacy-bg">
+    <div className="w-full flex-1 py-16 sm:py-24 bg-pharmacy-bg dark:bg-pharmacy-dark-bg transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted hover:text-pharmacy-forest transition-colors mb-10"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted hover:text-pharmacy-forest dark:hover:text-pharmacy-dark-forest transition-colors mb-10"
         >
-          <ArrowLeft className="w-4 h-4 text-pharmacy-amber" />
+          <ArrowLeft className="w-4 h-4 text-pharmacy-amber dark:text-pharmacy-dark-amber" />
           <span>Back to Home</span>
         </Link>
 
         {/* Page Header */}
         <div className="max-w-3xl mb-16 sm:mb-20">
-          <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block mb-3">
+          <span className="text-xs uppercase tracking-widest text-pharmacy-amber dark:text-pharmacy-dark-amber font-semibold block mb-3">
             Clear Insurance & Prescription Answers
           </span>
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-[4rem] font-bold text-pharmacy-forest tracking-tight leading-[1.08]">
+          <h1 className="font-serif text-4xl sm:text-6xl lg:text-[4rem] font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest tracking-tight leading-[1.08]">
             Insurance Coverage & Transfers FAQ
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-pharmacy-ink-muted leading-relaxed font-sans">
+          <p className="mt-6 text-lg sm:text-xl text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted leading-relaxed font-sans">
             Navigating insurance plans, transfer timelines, and mail-order rules should not be frustrating. Here is straightforward guidance on how prescription care works at Riverdale Pharmacy.
           </p>
         </div>
 
         {/* Insurance Overview Banner */}
-        <div className="p-8 sm:p-10 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm mb-16">
+        <div className="p-8 sm:p-10 rounded-card border border-pharmacy-border dark:border-pharmacy-dark-border bg-pharmacy-surface dark:bg-pharmacy-dark-surface shadow-warm mb-16 transition-colors duration-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
-                <ShieldCheck className="w-6 h-6 text-pharmacy-forest" />
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light dark:bg-emerald-950/40 text-pharmacy-forest dark:text-emerald-300 flex items-center justify-center shrink-0">
+                <ShieldCheck className="w-6 h-6 text-pharmacy-forest dark:text-emerald-300" />
               </div>
               <div>
-                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
                   Medicare & Medicaid
                 </h2>
-                <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
+                <p className="text-xs text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted mt-1 leading-relaxed">
                   Full coverage acceptance for Medicare Part D and New York State Medicaid plans.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border md:pl-8">
-              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
-                <FileCheck2 className="w-6 h-6 text-pharmacy-forest" />
+            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border dark:md:border-pharmacy-dark-border md:pl-8">
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light dark:bg-emerald-950/40 text-pharmacy-forest dark:text-emerald-300 flex items-center justify-center shrink-0">
+                <FileCheck2 className="w-6 h-6 text-pharmacy-forest dark:text-emerald-300" />
               </div>
               <div>
-                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
                   Major Commercial Plans
                 </h2>
-                <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
+                <p className="text-xs text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted mt-1 leading-relaxed">
                   Caremark, Express Scripts, OptumRx, BlueCross, Aetna, Cigna, and UnitedHealthcare.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border md:pl-8">
-              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light text-pharmacy-forest flex items-center justify-center shrink-0">
-                <Clock className="w-6 h-6 text-pharmacy-forest" />
+            <div className="flex items-start gap-4 md:border-l md:border-pharmacy-border dark:md:border-pharmacy-dark-border md:pl-8">
+              <div className="w-12 h-12 rounded-button bg-pharmacy-forest-light dark:bg-emerald-950/40 text-pharmacy-forest dark:text-emerald-300 flex items-center justify-center shrink-0">
+                <Clock className="w-6 h-6 text-pharmacy-forest dark:text-emerald-300" />
               </div>
               <div>
-                <h2 className="font-serif text-xl font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
                   Text / Email Alerts
                 </h2>
-                <p className="text-xs text-pharmacy-ink-muted mt-1 leading-relaxed">
+                <p className="text-xs text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted mt-1 leading-relaxed">
                   Real-time status updates when your refill or transfer is filled, bagged, or out for delivery.
                 </p>
               </div>
@@ -170,11 +170,11 @@ export default function InsuranceFaqPage() {
         <div className="space-y-16 mb-20">
           {FAQ_SECTIONS.map((section) => (
             <div key={section.category} className="space-y-8">
-              <div className="border-b border-pharmacy-border pb-4">
-                <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold">
+              <div className="border-b border-pharmacy-border dark:border-pharmacy-dark-border pb-4">
+                <span className="text-xs uppercase tracking-widest text-pharmacy-amber dark:text-pharmacy-dark-amber font-semibold">
                   Category
                 </span>
-                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-pharmacy-forest">
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
                   {section.category}
                 </h2>
               </div>
@@ -183,15 +183,15 @@ export default function InsuranceFaqPage() {
                 {section.questions.map((faq, idx) => (
                   <div
                     key={idx}
-                    className="interactive-card p-8 rounded-card border border-pharmacy-border bg-pharmacy-surface shadow-warm"
+                    className="interactive-card p-8 rounded-card border border-pharmacy-border dark:border-pharmacy-dark-border bg-pharmacy-surface dark:bg-pharmacy-dark-surface shadow-warm transition-colors duration-200"
                   >
                     <div className="flex items-start gap-4">
-                      <HelpCircle className="w-6 h-6 text-pharmacy-amber shrink-0 mt-1" />
+                      <HelpCircle className="w-6 h-6 text-pharmacy-amber dark:text-pharmacy-dark-amber shrink-0 mt-1" />
                       <div className="space-y-3">
-                        <h3 className="font-serif text-xl font-bold text-pharmacy-forest leading-snug">
+                        <h3 className="font-serif text-xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest leading-snug">
                           {faq.q}
                         </h3>
-                        <p className="text-base text-pharmacy-ink-muted leading-relaxed font-sans">
+                        <p className="text-base text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted leading-relaxed font-sans">
                           {faq.a}
                         </p>
                       </div>
@@ -204,30 +204,30 @@ export default function InsuranceFaqPage() {
         </div>
 
         {/* Real Photo & Callout Card */}
-        <div className="rounded-card border border-pharmacy-border bg-pharmacy-surface-subtle overflow-hidden shadow-warm-md">
+        <div className="rounded-card border border-pharmacy-border dark:border-pharmacy-dark-border bg-pharmacy-surface-subtle dark:bg-pharmacy-dark-surface overflow-hidden shadow-warm-md transition-colors duration-200">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
             <div className="lg:col-span-8 space-y-3">
-              <span className="text-xs uppercase tracking-widest text-pharmacy-amber font-semibold block">
+              <span className="text-xs uppercase tracking-widest text-pharmacy-amber dark:text-pharmacy-dark-amber font-semibold block">
                 Direct Insurance Verification
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-forest">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-pharmacy-forest dark:text-pharmacy-dark-forest">
                 Still have questions about your specific plan?
               </h2>
-              <p className="text-sm sm:text-base text-pharmacy-ink-muted leading-relaxed max-w-xl">
+              <p className="text-sm sm:text-base text-pharmacy-ink-muted dark:text-pharmacy-dark-ink-muted leading-relaxed max-w-xl">
                 Call our pharmacy team at {business.phoneDisplay} or bring your insurance card to 5669 Riverdale Ave. We are glad to check copays and formulary tiers for you on the spot.
               </p>
               <div className="pt-2">
                 <a
                   href={`tel:${business.phone}`}
-                  className="interactive-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest text-white hover:bg-pharmacy-forest-hover transition-colors shadow-sm min-h-[48px]"
+                  className="interactive-btn inline-flex items-center gap-2 px-7 py-3.5 rounded-button text-base font-semibold bg-pharmacy-forest dark:bg-pharmacy-dark-forest dark:text-pharmacy-dark-bg text-white hover:bg-pharmacy-forest-hover dark:hover:bg-pharmacy-dark-forest-hover transition-colors shadow-sm min-h-[48px]"
                 >
-                  <Phone className="w-4 h-4 text-pharmacy-amber-accent" />
+                  <Phone className="w-4 h-4 text-pharmacy-amber-accent dark:text-pharmacy-dark-bg" />
                   <span>Call {business.phoneDisplay}</span>
                 </a>
               </div>
             </div>
             <div className="lg:col-span-4 flex justify-center lg:justify-end">
-              <div className="relative rounded-card overflow-hidden border border-pharmacy-border w-full max-w-xs aspect-square shadow-warm">
+              <div className="relative rounded-card overflow-hidden border border-pharmacy-border dark:border-pharmacy-dark-border w-full max-w-xs aspect-square shadow-warm">
                 <Image
                   src="/images/riverdale-rx-care.webp"
                   alt="Pharmacist checking insurance prescription formulary details at Riverdale Pharmacy counter in Bronx, NY"
